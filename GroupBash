@@ -1,0 +1,14 @@
+/// Script for grouping few results based on some id or names
+$ cat test.out
+rahul 1
+rohit 2
+rahul 4
+ravi 1
+ravi 2
+
+$ awk '{arr[$1]+=$2} END {for (i in arr) {print i,arr[i]}}' test.out > test.out.updated
+
+$ cat test.out.updated
+ravi 3
+rahul 5
+rohit 2
